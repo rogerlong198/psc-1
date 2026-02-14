@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import { ArrowLeft, Minus, Plus, UtensilsCrossed, Package } from "lucide-react"
 import type { Product, Additional } from "@/lib/types"
@@ -21,6 +21,25 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
   const [selectedAdditionals, setSelectedAdditionals] = useState<
     Record<string, number>
   >({})
+
+  // Lock body scroll on iOS Safari when product detail is open
+  useEffect(() => {
+    const scrollY = window.scrollY
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.left = '0'
+    document.body.style.right = '0'
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.overflow = ''
+      window.scrollTo(0, scrollY)
+    }
+  }, [])
   const [observation, setObservation] = useState("")
 
   const suggestedProducts = useMemo(() => {
@@ -73,8 +92,8 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
   }
 
   return (
-    <div data-product-scroll className="fixed top-0 left-0 right-0 bottom-0 bg-background z-50 flex flex-col animate-in fade-in duration-300">
-      <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' }}>
+    <div data-product-scroll className="fixed inset-0 w-full h-full bg-background z-50 flex flex-col overflow-hidden animate-in fade-in duration-300" style={{ minHeight: '100vh', minHeight: '100dvh' } as React.CSSProperties}>
+      <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}>
       <div className="max-w-lg mx-auto pb-4 animate-in slide-in-from-bottom-8 duration-500 ease-out">
         <button
           onClick={onClose}
