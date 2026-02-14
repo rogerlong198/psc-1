@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { CookieBanner } from '@/components/cookie-banner'
+import { AgeVerification } from '@/components/delivery/age-verification'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -60,6 +61,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className={`font-sans antialiased`}>
+        <AgeVerification />
         {children}
         <CookieBanner />
       </body>
