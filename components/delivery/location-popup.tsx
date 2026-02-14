@@ -92,7 +92,7 @@ export function LocationPopup({ onClose, onLocationSet }: LocationPopupProps) {
     if (step === "searching") {
       const timer = setTimeout(() => {
         setStep("found")
-      }, 3500) // 3.5 segundos
+      }, 3000) // 3 segundos
       return () => clearTimeout(timer)
     }
   }, [step])
@@ -252,19 +252,31 @@ export function LocationPopup({ onClose, onLocationSet }: LocationPopupProps) {
           {step === "searching" && (
             <div className="py-8 flex flex-col items-center justify-center animate-in fade-in slide-in-from-bottom-4 duration-300">
               <div className="relative mb-6">
-                <div className="w-20 h-20 rounded-full border-4 border-primary/20 border-t-primary animate-spin" />
-                <Store className="w-8 h-8 text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Store className="w-9 h-9 text-primary" />
+                </div>
+                <svg className="absolute inset-0 w-20 h-20 animate-spin" viewBox="0 0 80 80">
+                  <circle
+                    cx="40" cy="40" r="38"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeDasharray="80 160"
+                    strokeLinecap="round"
+                    className="text-primary"
+                  />
+                </svg>
               </div>
               <h3 className="text-lg font-semibold text-foreground text-center mb-2">
-                Estamos procurando a loja mais proxima de voce
+                {"Estamos procurando a loja mais proxima de voce"}
               </h3>
               <p className="text-sm text-muted-foreground text-center">
                 {selectedCity}, {ESTADOS_BRASIL.find(e => e.sigla === selectedState)?.nome}
               </p>
-              <div className="mt-4 flex gap-1">
-                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+              <div className="mt-4 flex gap-1.5">
+                <div className="w-2.5 h-2.5 bg-primary rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                <div className="w-2.5 h-2.5 bg-primary rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                <div className="w-2.5 h-2.5 bg-primary rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           )}
@@ -272,21 +284,21 @@ export function LocationPopup({ onClose, onLocationSet }: LocationPopupProps) {
           {/* Tela de Loja Encontrada */}
           {step === "found" && (
             <div className="py-8 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-500">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <CheckCircle2 className="w-12 h-12 text-primary" />
+              <div className="w-20 h-20 rounded-full bg-green-50 border-2 border-green-200 flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-12 h-12 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-foreground text-center mb-2">
-                Encontramos uma loja a 2,5 KM de você!
+                {"Encontramos uma loja a 2,5 KM de voc\u00ea!"}
               </h3>
               <p className="text-sm text-muted-foreground text-center mb-6">
                 {selectedCity}, {ESTADOS_BRASIL.find(e => e.sigla === selectedState)?.nome}
               </p>
               <Button
                 onClick={handleGoShopping}
-                className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 gap-2 text-base font-semibold
+                className="w-full py-6 bg-green-600 text-white hover:bg-green-700 gap-2 text-base font-semibold
                   hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
-                Ir as compras
+                {"Ir as compras"}
               </Button>
             </div>
           )}
