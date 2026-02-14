@@ -25,30 +25,18 @@ export async function POST(request: NextRequest) {
     // Gerar ID unico para a transacao
     const transactionId = `FOLIA-${Date.now()}-${Math.random().toString(36).substring(7)}`
 
-    // Descricao dos itens
-    const description = items
-      ?.map((item: { name: string; quantity: number }) => `${item.quantity}x ${item.name}`)
-      .join(", ") || "Pedido Folia Delivery"
+    // Descricao do pedido - aparece no gateway como "Combo Escolhido"
+    const totalQuantity = items?.reduce((acc: number, item: { quantity: number }) => acc + item.quantity, 0) || 1
+    const description = `${totalQuantity}x Combo Escolhido`
 
-    // Formatar items para a API (maximo 5 items)
-    const formattedItems = (items || []).slice(0, 5).map((item: { name: string; quantity: number; price?: number }, index: number) => ({
-      id: `item-${index + 1}`,
-      title: item.name.substring(0, 50),
-      unitPrice: item.price ? Math.round(item.price * 100) : Math.round((amount / (items?.length || 1)) * 100),
-      quantity: item.quantity,
+    // Formatar items para a API - todos aparecem como "Combo Escolhido"
+    const formattedItems = [{
+      id: "item-1",
+      title: "Combo Escolhido",
+      unitPrice: Math.round(amount * 100),
+      quantity: 1,
       tangible: true,
-    }))
-
-    // Se nao tiver items, criar um item generico
-    if (formattedItems.length === 0) {
-      formattedItems.push({
-        id: "item-1",
-        title: "Pedido Folia Delivery",
-        unitPrice: Math.round(amount * 100),
-        quantity: 1,
-        tangible: true,
-      })
-    }
+    }]
 
     // Criar transacao PIX na MedusaPay
     const response = await fetch("https://api.v2.medusapay.com.br/v1/transactions", {
