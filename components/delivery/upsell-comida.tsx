@@ -8,22 +8,22 @@ import { products } from "@/lib/data"
 import { useCart } from "@/lib/cart-context"
 
 const UPSELL_PRODUCT_IDS = [
-  "113", // O`BURGER
-  "101", // Bolinho de Carne Seca com Queijo
-  "100", // Batata Frita com Queijo e Bacon
-  "102", // Camarao Ao Alho E Oleo
-  "103", // Chapa Mista G
-  "104", // Coxinha de Frango com Requeijao
-  "105", // Escalope de Mignon
-  "107", // File Acebolado
-  "108", // File de Tilapia com Fritas
-  "109", // File em Medalhao com Alcaparras
-  "110", // Fraldinha Mista
-  "111", // Frango a Passarinho
-  "114", // Pastel de Carne com Queijo
-  "115", // Porcao de Feijao Tropeiro 300g
-  "116", // Torresmo Pururuca com Mandioca
-  "117", // Tulipas com Molho Especial
+  "213", // O`BURGER
+  "201", // Bolinho de Carne Seca com Queijo
+  "200", // Batata Frita com Queijo e Bacon
+  "202", // Camarao Ao Alho E Oleo
+  "203", // Chapa Mista G
+  "204", // Coxinha de Frango com Requeijao
+  "205", // Escalope de Mignon
+  "207", // File Acebolado
+  "208", // File de Tilapia com Fritas
+  "209", // File em Medalhao com Alcaparras
+  "210", // Fraldinha Mista
+  "211", // Frango a Passarinho
+  "214", // Pastel de Carne com Queijo
+  "215", // Porcao de Feijao Tropeiro 300g
+  "216", // Torresmo Pururuca com Mandioca
+  "217", // Tulipas com Molho Especial
 ]
 
 function shuffleArray<T>(array: T[]): T[] {
