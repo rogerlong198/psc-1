@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { PixCheckout } from "./pix-checkout"
 import { UpsellCombo } from "./upsell-combo"
-import { UpsellComida } from "./upsell-comida"
+import { UpsellComida, UPSELL_PRODUCT_IDS } from "./upsell-comida"
 
 interface CartDrawerProps {
   isOpen: boolean
@@ -22,17 +22,22 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const [showUpsellComida, setShowUpsellComida] = useState(false)
   const [editingComboId, setEditingComboId] = useState<string | null>(null)
 
+  const hasUpsellItemInCart = items.some((item) => UPSELL_PRODUCT_IDS.includes(item.product.id))
+
   const canCheckout = totalPrice >= MIN_ORDER_VALUE
   const remainingValue = MIN_ORDER_VALUE - totalPrice
 
   const handleCheckout = () => {
     if (!canCheckout) return
-    setShowUpsellComida(true)
+    if (!hasUpsellItemInCart) {
+      setShowUpsellComida(true)
+    } else {
+      setShowPixCheckout(true)
+    }
   }
 
-  const handleUpsellContinue = () => {
+  const handleUpsellClose = () => {
     setShowUpsellComida(false)
-    setShowPixCheckout(true)
   }
 
   const handlePaymentSuccess = () => {
@@ -251,8 +256,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       {/* Modal de Upsell Comida */}
       {showUpsellComida && (
         <UpsellComida
-          onClose={() => setShowUpsellComida(false)}
-          onContinue={handleUpsellContinue}
+          onClose={handleUpsellClose}
+          onContinue={handleUpsellClose}
         />
       )}
 

@@ -2,28 +2,28 @@
 
 import { useState, useMemo } from "react"
 import Image from "next/image"
-import { X, Plus, ShoppingBag, ArrowRight, Flame } from "lucide-react"
+import { X, Plus, ShoppingBag, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { products } from "@/lib/data"
 import { useCart } from "@/lib/cart-context"
 
-const UPSELL_PRODUCT_IDS = [
-  "113", // O`BURGER
-  "101", // Bolinho de Carne Seca com Queijo
-  "100", // Batata Frita com Queijo e Bacon
-  "102", // Camarao Ao Alho E Oleo
-  "103", // Chapa Mista G
-  "104", // Coxinha de Frango com Requeijao
-  "105", // Escalope de Mignon
-  "107", // File Acebolado
-  "108", // File de Tilapia com Fritas
-  "109", // File em Medalhao com Alcaparras
-  "110", // Fraldinha Mista
-  "111", // Frango a Passarinho
-  "114", // Pastel de Carne com Queijo
-  "115", // Porcao de Feijao Tropeiro 300g
-  "116", // Torresmo Pururuca com Mandioca
-  "117", // Tulipas com Molho Especial
+export const UPSELL_PRODUCT_IDS = [
+  "213", // O`BURGER
+  "201", // Bolinho de Carne Seca com Queijo
+  "200", // Batata Frita com Queijo e Bacon
+  "202", // Camarao Ao Alho E Oleo
+  "203", // Chapa Mista G
+  "204", // Coxinha de Frango com Requeijao
+  "205", // Escalope de Mignon
+  "207", // File Acebolado
+  "208", // File de Tilapia com Fritas
+  "209", // File em Medalhao com Alcaparras
+  "210", // Fraldinha Mista
+  "211", // Frango a Passarinho
+  "214", // Pastel de Carne com Queijo
+  "215", // Porcao de Feijao Tropeiro 300g
+  "216", // Torresmo Pururuca com Mandioca
+  "217", // Tulipas com Molho Especial
 ]
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -43,6 +43,7 @@ interface UpsellComidaProps {
 export function UpsellComida({ onClose, onContinue }: UpsellComidaProps) {
   const { addItem } = useCart()
   const [addedIds, setAddedIds] = useState<Set<string>>(new Set())
+  const [isClosing, setIsClosing] = useState(false)
 
   const upsellProducts = useMemo(() => {
     const filtered = products.filter((p) => UPSELL_PRODUCT_IDS.includes(p.id))
@@ -54,32 +55,44 @@ export function UpsellComida({ onClose, onContinue }: UpsellComidaProps) {
     setAddedIds((prev) => new Set(prev).add(product.id))
   }
 
+  const handleClose = () => {
+    setIsClosing(true)
+    setTimeout(() => onClose(), 400)
+  }
+
+  const handleContinue = () => {
+    setIsClosing(true)
+    setTimeout(() => onContinue(), 400)
+  }
+
   const addedCount = addedIds.size
 
   return (
     <div className="fixed inset-0 z-[60]">
       <div
-        className="absolute inset-0 bg-black/50 animate-in fade-in duration-300"
-        onClick={onClose}
+        className={`absolute inset-0 bg-black/50 transition-opacity duration-400 ${isClosing ? "opacity-0" : "animate-in fade-in duration-300"}`}
+        onClick={handleClose}
       />
-      <div className="absolute bottom-0 left-0 right-0 bg-card rounded-t-3xl max-h-[85vh] overflow-hidden flex flex-col animate-in slide-in-from-bottom-full duration-500 ease-out">
+      <div
+        className={`absolute bottom-0 left-0 right-0 bg-card rounded-t-3xl max-h-[85vh] overflow-hidden flex flex-col transition-transform duration-400 ease-in-out ${isClosing ? "translate-y-full" : "animate-in slide-in-from-bottom-full duration-500 ease-out"}`}
+      >
         <div className="max-w-lg mx-auto w-full flex flex-col flex-1 min-h-0">
           {/* Header */}
           <div className="flex-shrink-0 bg-card border-b border-border p-4">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center">
-                  <Flame className="w-5 h-5 text-white" />
+                <div className="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-xl">
+                  <span role="img" aria-label="hamburger">🍔</span>
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-foreground">Bateu a fome?</h2>
+                  <h2 className="text-lg font-bold text-foreground">Bateu a fome? Que tal um lanchinho</h2>
                   <p className="text-xs text-muted-foreground">
                     Adicione um prato ao seu pedido
                   </p>
                 </div>
               </div>
               <button
-                onClick={onClose}
+                onClick={handleClose}
                 className="p-2 rounded-full hover:bg-secondary"
               >
                 <X className="w-5 h-5 text-muted-foreground" />
@@ -146,7 +159,7 @@ export function UpsellComida({ onClose, onContinue }: UpsellComidaProps) {
           {/* Footer */}
           <div className="flex-shrink-0 border-t border-border p-4 bg-card space-y-3">
             <Button
-              onClick={onContinue}
+              onClick={handleContinue}
               className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold gap-2
                 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
@@ -158,7 +171,7 @@ export function UpsellComida({ onClose, onContinue }: UpsellComidaProps) {
             </Button>
             {addedCount === 0 && (
               <button
-                onClick={onContinue}
+                onClick={handleContinue}
                 className="w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
               >
                 Nao quero, obrigado

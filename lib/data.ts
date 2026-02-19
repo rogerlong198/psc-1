@@ -1184,7 +1184,7 @@ export const products: Product[] = [
 
   // COMIDA
   {
-    id: "100",
+    id: "200",
     name: "Batata Frita com Queijo e Bacon",
     description: "500g de batata crocante, coberta com queijo derretido e bacon no ponto certo.",
     price: 28.00,
@@ -1194,7 +1194,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "101",
+    id: "201",
     name: "Bolinho de Carne Seca com Queijo",
     description: "Sao 10 unidades de bolinhos dourados, preparados com carne seca desfiada e temperada no estilo caipira, unidos a um recheio cremoso de queijo que escorre a cada mordida.",
     price: 22.80,
@@ -1204,7 +1204,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "102",
+    id: "202",
     name: "Camarao Ao Alho E Oleo",
     description: "Camaroes grelhados ao alho frito e oleo. Acompanha molho tartaro. 350 gr.",
     price: 83.90,
@@ -1214,7 +1214,7 @@ export const products: Product[] = [
     accompaniments: ["Molho tartaro"]
   },
   {
-    id: "103",
+    id: "203",
     name: "Chapa Mista G",
     description: "600g de picanha macia e suculenta, selada na chapa, acompanhada de 200g de batata frita coberta com queijo derretido e bacon crocante, alem de 200g de mandioca no ponto perfeito.",
     price: 96.90,
@@ -1224,7 +1224,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "104",
+    id: "204",
     name: "Coxinha de Frango com Requeijao",
     description: "Sao 12 unidades de coxinha dourada e crocante, recheadas com frango desfiado temperado no estilo caseiro e um toque generoso de requeijao cremoso que derrete a cada mordida.",
     price: 25.90,
@@ -1234,7 +1234,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "105",
+    id: "205",
     name: "Escalope de Mignon",
     description: "File mignon em corte escalope grelhado com molho ferrugem a base de vinho tinto. Acompanha arroz e batata palha caseira. Serve 3 pessoas.",
     price: 79.90,
@@ -1244,7 +1244,7 @@ export const products: Product[] = [
     accompaniments: ["Molho ferrugem"]
   },
   {
-    id: "106",
+    id: "206",
     name: "Feijoada",
     description: "Preparada no fogo lento, como manda a tradicao, com carnes selecionadas que desmancham no paladar e temperos que contam historias em cada colherada.",
     price: 26.90,
@@ -1254,7 +1254,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "107",
+    id: "207",
     name: "File Acebolado",
     description: "File mignon em tiras grelhadas com cebola roxa. Acompanha fritas e tomate. 500 gr.",
     price: 65.90,
@@ -1264,7 +1264,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "108",
+    id: "208",
     name: "File de Tilapia com Fritas",
     description: "500g de file de tilapia macio e temperado, dourado na chapa ate ganhar cor e sabor marcantes. Servido com batata frita dourada e crocante.",
     price: 61.80,
@@ -1274,7 +1274,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "109",
+    id: "209",
     name: "File em Medalhao com Alcaparras",
     description: "File mignon com corte especial alto envolto em bacon, finalizado no forno com molho de queijos e alcaparras. Acompanha farofa de alho, arroz com brocolis e salada. Serve 3 pessoas.",
     price: 78.90,
@@ -1284,7 +1284,7 @@ export const products: Product[] = [
     accompaniments: ["Molho de queijos e alcaparras"]
   },
   {
-    id: "110",
+    id: "210",
     name: "Fraldinha Mista",
     description: "450g de fraldinha macia e suculenta, preparada na chapa para selar o sabor e manter toda a suculencia. Acompanha 200g de batata frita coberta com queijo.",
     price: 86.90,
@@ -1294,7 +1294,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "111",
+    id: "211",
     name: "Frango a Passarinho",
     description: "500g de frango temperado e frito ate a crocancia perfeita, no tempero da casa.",
     price: 23.49,
@@ -1304,7 +1304,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "112",
+    id: "212",
     name: "Isca de File Mignon a Parmegiana",
     description: "Isca de File Mignon empanada e frita com molho de tomate da casa e gratinada com mussarela. Acompanha batata palha. 350 gr.",
     price: 72.90,
@@ -1314,7 +1314,7 @@ export const products: Product[] = [
     accompaniments: ["Molho de tomate"]
   },
   {
-    id: "113",
+    id: "213",
     name: "O`BURGER",
     description: "Pao de hamburguer, burguer bovino de 110g, presunto de alta qualidade, queijo mussarela fatiado, muito bacon sequinho, salada de alface e tomate e maionese caseira especial do Betao.",
     price: 21.00,
@@ -1324,7 +1324,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "114",
+    id: "214",
     name: "Pastel de Carne com Queijo",
     description: "Sao 10 unidades de pasteis sequinhos, recheados com carne moida bem temperada e queijo derretido, no ponto certo entre o crocante e o cremoso.",
     price: 26.90,
@@ -1334,7 +1334,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "115",
+    id: "215",
     name: "Porcao de Feijao Tropeiro 300g",
     description: "Feijao tropeiro preparado no estilo mineiro raiz, com graos macios, tempero da casa e toques de bacon e temperos que lembram cozinha de fazenda.",
     price: 21.90,
@@ -1344,7 +1344,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "116",
+    id: "216",
     name: "Torresmo Pururuca com Mandioca",
     description: "Crocancia e sabor em cada mordida, o classico do boteco.",
     price: 18.00,
@@ -1354,7 +1354,7 @@ export const products: Product[] = [
     accompaniments: ["Mandioca"]
   },
   {
-    id: "117",
+    id: "217",
     name: "Tulipas com Molho Especial",
     description: "12 unidades douradas e crocantes, com o molho exclusivo do Picanha Boteco & Choperia.",
     price: 26.90,
