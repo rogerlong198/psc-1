@@ -187,7 +187,7 @@ export function UpsellComida({ onClose, onContinue, onSkip }: UpsellComidaProps)
               <ShoppingBag className="w-5 h-5" />
               {addedCount > 0
                 ? `Continuar com ${addedCount} ${addedCount === 1 ? "item" : "itens"} adicionado${addedCount === 1 ? "" : "s"}`
-                : "Pagar com PIX"}
+                : "Finalizar compra"}
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
             {addedCount === 0 && (
