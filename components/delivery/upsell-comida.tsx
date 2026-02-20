@@ -47,9 +47,10 @@ interface UpsellComidaProps {
   onClose: () => void
   onContinue: () => void
   onSkip?: () => void
+  onViewMenu?: () => void
 }
 
-export function UpsellComida({ onClose, onContinue, onSkip }: UpsellComidaProps) {
+export function UpsellComida({ onClose, onContinue, onSkip, onViewMenu }: UpsellComidaProps) {
   const { addItem } = useCart()
   const [addedIds, setAddedIds] = useState<Set<string>>(new Set())
   const [isClosing, setIsClosing] = useState(false)
@@ -86,16 +87,23 @@ export function UpsellComida({ onClose, onContinue, onSkip }: UpsellComidaProps)
     setTimeout(() => (onSkip ? onSkip() : onContinue()), 400)
   }
 
+  const handleViewMenu = () => {
+    setIsClosing(true)
+    setTimeout(() => {
+      if (onViewMenu) onViewMenu()
+    }, 400)
+  }
+
   const addedCount = addedIds.size
 
   return (
-    <div className="safari-drawer-overlay z-[60]">
+    <div className="fixed inset-0 z-[60]" style={{ minHeight: '100dvh' }}>
       <div
-        className={`absolute inset-0 bg-black/50 transition-opacity duration-400 ${isClosing ? "opacity-0" : "animate-in fade-in duration-300"}`}
+        className={`fixed inset-0 z-[60] bg-black/50 transition-opacity duration-400 ${isClosing ? "opacity-0" : "animate-in fade-in duration-300"}`}
         onClick={handleClose}
       />
       <div
-        className={`fixed bottom-0 left-0 right-0 bg-card rounded-t-3xl max-h-[85dvh] max-h-[85svh] overflow-hidden flex flex-col transition-transform duration-400 ease-in-out ${isClosing ? "translate-y-full" : "animate-in slide-in-from-bottom-full duration-500 ease-out"}`}
+        className={`fixed bottom-0 left-0 right-0 z-[61] bg-card rounded-t-3xl max-h-[85dvh] max-h-[85svh] overflow-hidden flex flex-col transition-transform duration-400 ease-in-out ${isClosing ? "translate-y-full" : "animate-in slide-in-from-bottom-full duration-500 ease-out"}`}
       >
         <div className="max-w-lg mx-auto w-full flex flex-col flex-1 min-h-0">
           {/* Header */}
@@ -106,7 +114,7 @@ export function UpsellComida({ onClose, onContinue, onSkip }: UpsellComidaProps)
                   <span role="img" aria-label="hamburger">🍔</span>
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-foreground">Bateu a fome? Que tal um lanchinho</h2>
+                  <h2 className="text-lg font-bold text-foreground">Bateu a fome? Que tal pedir um acompanhamento?</h2>
                   <p className="text-xs text-muted-foreground">
                     Adicione um prato ao seu pedido
                   </p>
@@ -179,24 +187,34 @@ export function UpsellComida({ onClose, onContinue, onSkip }: UpsellComidaProps)
 
           {/* Footer */}
           <div className="flex-shrink-0 border-t border-border p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] bg-card space-y-3">
-            <Button
-              onClick={handleContinue}
-              className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold gap-2
-                hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
-              <ShoppingBag className="w-5 h-5" />
-              {addedCount > 0
-                ? `Continuar com ${addedCount} ${addedCount === 1 ? "item" : "itens"} adicionado${addedCount === 1 ? "" : "s"}`
-                : "Finalizar compra"}
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Button>
-            {addedCount === 0 && (
-              <button
-                onClick={handleSkip}
-                className="w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+            {addedCount > 0 ? (
+              <Button
+                onClick={handleContinue}
+                className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold gap-2
+                  hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
-                Nao quero, obrigado
-              </button>
+                <ShoppingBag className="w-5 h-5" />
+                {`Continuar com ${addedCount} ${addedCount === 1 ? "item" : "itens"} adicionado${addedCount === 1 ? "" : "s"}`}
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            ) : (
+              <>
+                <Button
+                  onClick={handleSkip}
+                  className="w-full py-6 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold gap-2
+                    hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                >
+                  <ShoppingBag className="w-5 h-5" />
+                  {"Nao quero. Finalizar"}
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+                <button
+                  onClick={handleViewMenu}
+                  className="w-full text-center text-sm font-medium text-primary hover:text-primary/80 underline transition-colors py-1"
+                >
+                  Ver cardapio completo
+                </button>
+              </>
             )}
           </div>
         </div>

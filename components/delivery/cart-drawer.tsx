@@ -12,11 +12,12 @@ import { UpsellComida, UPSELL_PRODUCT_IDS } from "./upsell-comida"
 interface CartDrawerProps {
   isOpen: boolean
   onClose: () => void
+  onNavigateToCategory?: (categoryId: string) => void
 }
 
 const MIN_ORDER_VALUE = 50
 
-export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
+export function CartDrawer({ isOpen, onClose, onNavigateToCategory }: CartDrawerProps) {
   const { items, totalPrice, updateQuantity, removeItem, clearCart, addCombo } = useCart()
   const [showPixCheckout, setShowPixCheckout] = useState(false)
   const [showUpsellComida, setShowUpsellComida] = useState(false)
@@ -45,6 +46,14 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     setShowPixCheckout(true)
   }
 
+  const handleViewMenu = () => {
+    setShowUpsellComida(false)
+    onClose()
+    if (onNavigateToCategory) {
+      onNavigateToCategory("comida")
+    }
+  }
+
   const handlePaymentSuccess = () => {
     clearCart()
     onClose()
@@ -68,8 +77,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
   return (
     <div className="safari-drawer-overlay z-50">
-      <div className="absolute inset-0 bg-black/50 animate-in fade-in duration-300" />
-      <div className="fixed bottom-0 left-0 right-0 bg-card rounded-t-3xl max-h-[85dvh] max-h-[85svh] overflow-hidden flex flex-col animate-in slide-in-from-bottom-full duration-500 ease-out">
+      <div className="fixed inset-0 z-50 bg-black/60 animate-in fade-in duration-300" />
+      <div className="fixed bottom-0 left-0 right-0 z-[51] bg-card rounded-t-3xl max-h-[85dvh] max-h-[85svh] overflow-hidden flex flex-col animate-in slide-in-from-bottom-full duration-500 ease-out">
         <div className="max-w-lg mx-auto w-full flex flex-col flex-1 min-h-0">
           <div className="flex-shrink-0 bg-card border-b border-border p-4 flex items-center justify-between">
             <h2 className="text-xl font-bold text-foreground">Seu Carrinho</h2>
@@ -278,6 +287,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           onClose={handleUpsellClose}
           onContinue={handleUpsellClose}
           onSkip={handleUpsellSkip}
+          onViewMenu={handleViewMenu}
         />
       )}
 

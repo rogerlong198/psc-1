@@ -167,8 +167,8 @@ function DeliveryApp() {
       </main>
 
       <PendingOrdersButton onClick={() => setShowPendingOrders(true)} />
-      <CartButton onClick={() => setIsCartOpen(true)} />
-      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <CartButton onClick={() => setIsCartOpen(true)} isCartOpen={isCartOpen} />
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} onNavigateToCategory={handleCategoryChange} />
 
       {selectedProduct && (
         <ProductDetail
