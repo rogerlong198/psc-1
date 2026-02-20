@@ -233,7 +233,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   }`}
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  {canCheckout ? "Pagar com PIX" : "Pedido minimo R$ 50"}
+                  {canCheckout ? "Finalizar compra" : "Pedido minimo R$ 50"}
                 </Button>
               </div>
             </div>
