@@ -10,18 +10,6 @@ const banners = [
     alt: "Deu fome? Peca aqui tambem! Entrega em minutos",
     categoryLink: "comida",
   },
-  {
-    id: 2,
-    src: "/banners/banner-2.jpg",
-    alt: "Destilados Premium - Drinks Fortes",
-    categoryLink: "queridinhos",
-  },
-  {
-    id: 3,
-    src: "/banners/banner-3.jpg",
-    alt: "Drinks e Combos especiais",
-    categoryLink: null,
-  },
 ]
 
 interface BannerCarouselProps {
