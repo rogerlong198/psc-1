@@ -15,7 +15,7 @@ interface CartDrawerProps {
   onNavigateToCategory?: (categoryId: string) => void
 }
 
-const MIN_ORDER_VALUE = 50
+const MIN_ORDER_VALUE = 85
 
 export function CartDrawer({ isOpen, onClose, onNavigateToCategory }: CartDrawerProps) {
   const { items, totalPrice, updateQuantity, removeItem, clearCart, addCombo } = useCart()
