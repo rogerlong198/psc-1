@@ -39,7 +39,6 @@ interface AddressData {
 }
 
 export function PixCheckout({ amount, items, onClose, onSuccess }: PixCheckoutProps) {
-  console.log("[v0] PixCheckout RENDERED - amount:", amount, "items:", items.length)
   const [step, setStep] = useState<"form" | "address" | "loading" | "qrcode" | "success" | "error">("form")
   const [customerData, setCustomerData] = useState<CustomerData>({
     name: "",
@@ -132,15 +131,6 @@ export function PixCheckout({ amount, items, onClose, onSuccess }: PixCheckoutPr
     setError("")
 
     try {
-      console.log("[v0] Sending PIX request with data:", {
-        amount,
-        customerName: customerData.name,
-        customerEmail: customerData.email,
-        customerDocument: customerData.document,
-        customerPhone: customerData.phone,
-        itemsCount: items.length,
-      })
-
       const response = await fetch("/api/pix", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -156,10 +146,7 @@ export function PixCheckout({ amount, items, onClose, onSuccess }: PixCheckoutPr
 
       const data = await response.json()
 
-      console.log("[v0] PIX API response status:", response.status, "data:", JSON.stringify(data))
-
       if (!response.ok) {
-        console.log("[v0] PIX API error details:", data)
         throw new Error(data.error || "Erro ao gerar PIX")
       }
 
@@ -218,10 +205,6 @@ export function PixCheckout({ amount, items, onClose, onSuccess }: PixCheckoutPr
         value: amount,
         currency: "BRL",
       })
-      console.log("[v0] dataLayer compra_aprovada disparado:", {
-        transaction_id: pixData?.transactionId,
-        value: amount,
-      })
     }
 
     // Mostrar tela de sucesso
@@ -235,8 +218,6 @@ export function PixCheckout({ amount, items, onClose, onSuccess }: PixCheckoutPr
       try {
         const response = await fetch(`/api/verificar-status?pedido_id=${pixData.transactionId}`)
         const data = await response.json()
-
-        console.log("[v0] Polling status:", data.status, "raw:", data.rawStatus)
 
         if (data.status === "Pago") {
           clearInterval(intervalId)

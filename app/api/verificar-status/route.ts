@@ -31,10 +31,7 @@ export async function GET(request: NextRequest) {
 
     const data = await response.json()
 
-    console.log("[v0] MedusaPay status check for", pedidoId, ":", JSON.stringify(data?.status))
-
     if (!response.ok) {
-      console.error("[v0] MedusaPay status error:", data)
       return NextResponse.json(
         { error: data.message || "Erro ao consultar status" },
         { status: response.status }
@@ -49,8 +46,7 @@ export async function GET(request: NextRequest) {
       status: isPaid ? "Pago" : "Pendente",
       rawStatus: rawStatus,
     })
-  } catch (error) {
-    console.error("[v0] Status check error:", error)
+  } catch {
     return NextResponse.json(
       { error: "Erro interno ao verificar status" },
       { status: 500 }
