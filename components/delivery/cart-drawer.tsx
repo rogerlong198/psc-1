@@ -25,14 +25,17 @@ export function CartDrawer({ isOpen, onClose, onNavigateToCategory, openCombo, o
   const [showUpsellComida, setShowUpsellComida] = useState(false)
   const [editingComboId, setEditingComboId] = useState<string | null>(null)
   const [showComboBuilder, setShowComboBuilder] = useState(false)
+  const [prevOpenCombo, setPrevOpenCombo] = useState(false)
 
-  // Quando openCombo = true, abre o combo builder direto
-  useEffect(() => {
-    if (openCombo && isOpen) {
-      setShowComboBuilder(true)
-      onComboOpened?.()
-    }
-  }, [openCombo, isOpen, onComboOpened])
+  // Detecta mudanca de openCombo de false -> true (sem useEffect)
+  if (openCombo && !prevOpenCombo && isOpen) {
+    setShowComboBuilder(true)
+    setPrevOpenCombo(true)
+    onComboOpened?.()
+  }
+  if (!openCombo && prevOpenCombo) {
+    setPrevOpenCombo(false)
+  }
 
   const hasUpsellItemInCart = items.some((item) => UPSELL_PRODUCT_IDS.includes(item.product.id))
 
