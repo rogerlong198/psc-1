@@ -897,7 +897,7 @@ export const products: Product[] = [
     description: "O mesmo sabor original do Brasil, agora sem açúcar",
     price: 5.99,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-sem-acucar-garrafa-15l-1.jpg?v=1769124335",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 1,5L", "Zero açúcar"],
     accompaniments: []
   },
@@ -907,7 +907,7 @@ export const products: Product[] = [
     description: "Guaraná feito com fruto da Amazônia, sem açúcar",
     price: 3.09,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-sem-acucar-lata-350ml-1.jpg?v=1769124330",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 350ml", "Zero açúcar"],
     accompaniments: []
   },
@@ -917,7 +917,7 @@ export const products: Product[] = [
     description: "O clássico guaraná brasileiro com sabor único",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-350ml-1.jpg?v=1769124326",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 350ml"],
     accompaniments: []
   },
@@ -927,7 +927,7 @@ export const products: Product[] = [
     description: "Pepsi zero acucar em garrafa grande",
     price: 5.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008891_27e5d388-357e-48c9-b50d-f953a63cf087.webp?v=1769744344",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 2L", "Zero acucar"],
     accompaniments: []
@@ -938,7 +938,7 @@ export const products: Product[] = [
     description: "O sabor classico da Pepsi em garrafa grande",
     price: 5.50,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008885_5a9e7c2a-4d9b-4419-befd-e19dd7564758.webp?v=1769744386",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 2L"],
     accompaniments: []
   },
@@ -948,7 +948,7 @@ export const products: Product[] = [
     description: "O classico guarana brasileiro em garrafa grande",
     price: 5.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008884_91a99c52-6aad-4f1e-a91f-f8b943bbbd46.webp?v=1769744532",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 2L"],
     accompaniments: []
   },
@@ -958,7 +958,7 @@ export const products: Product[] = [
     description: "Pepsi zero acucar em lata",
     price: 2.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008867_6a15d204-0229-4912-b00e-7e0c0dd4a62f.webp?v=1769744608",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -969,7 +969,7 @@ export const products: Product[] = [
     description: "Guarana Antarctica sem acucar em lata",
     price: 2.97,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008865_0da83f51-0f96-4247-9cac-1963bc60dd1c.webp?v=1769744652",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -980,7 +980,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em garrafa compacta",
     price: 1.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/924191-400-auto.avif?v=1769750734",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 200ml", "Zero acucar"],
     accompaniments: []
@@ -991,7 +991,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em garrafa grande",
     price: 11.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/911856-400-auto.avif?v=1769750763",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 2L", "Zero acucar"],
     accompaniments: []
@@ -1002,7 +1002,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata",
     price: 3.99,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/911854-400-auto.avif?v=1769750792",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -1013,7 +1013,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata compacta",
     price: 2.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/927046-400-auto.avif?v=1769750823",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 220ml", "Zero acucar"],
     accompaniments: []
@@ -1024,7 +1024,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata sleek",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/923034-400-auto.avif?v=1769750859",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 310ml", "Zero acucar"],
     accompaniments: []
@@ -1035,7 +1035,7 @@ export const products: Product[] = [
     description: "Coca-Cola original em lata sleek",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/983001-400-auto.avif?v=1769750883",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 310ml"],
     accompaniments: []
   },
@@ -1388,7 +1388,6 @@ export const categories = [
   { id: "cervejas", name: "Cervejas", icon: "/categories/cervejas.png" },
   { id: "comida", name: "Comida", icon: "/categories/comida.png" },
   { id: "queridinhos", name: "Destilados", icon: "/categories/destilados.png" },
-  { id: "combinados", name: "Energeticos", icon: "/categories/energeticos.png" },
-  { id: "temaki", name: "Refrigerantes", icon: "/categories/refrigerantes.png" },
+  { id: "combinados", name: "Refri e Energeticos", icon: "/categories/refrigerantes.png" },
   { id: "poke", name: "Gelinhos", icon: "/categories/gelinhos.png" },
   ]
