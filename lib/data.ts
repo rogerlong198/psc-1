@@ -337,7 +337,7 @@ export const products: Product[] = [
   },
   {
     id: "67",
-    name: "Cerveja Amstel 269ml",
+    name: "Cerveja Amstel 269ml 12 Un",
     description: "Cerveja puro malte em lata compacta",
     price: 3.09,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/921937-400-auto.avif?v=1769743299",
