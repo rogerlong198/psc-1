@@ -14,7 +14,7 @@ import { CartButton } from "@/components/delivery/cart-button"
 import { CartDrawer } from "@/components/delivery/cart-drawer"
 import { ProductDetail } from "@/components/delivery/product-detail"
 import { LocationPopup } from "@/components/delivery/location-popup"
-import { CategoryShowcase } from "@/components/delivery/category-showcase"
+import { HighlightProducts } from "@/components/delivery/category-showcase"
 import { AboutUs } from "@/components/delivery/about-us"
 import { Footer } from "@/components/delivery/footer"
 import { BannerCarousel } from "@/components/delivery/banner-carousel"
@@ -94,14 +94,15 @@ function DeliveryApp() {
               <h2 className="text-lg font-bold text-foreground mb-4">
                 Ofertas do Dia
               </h2>
-              <div className="space-y-3">
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory">
                 {featuredProducts.map((product, index) => (
-                  <CompactProductCard
-                    key={product.id}
-                    product={product}
-                    index={index}
-                    onClick={() => setSelectedProduct(product)}
-                  />
+                  <div key={product.id} className="flex-shrink-0 w-[42vw] max-w-[180px] snap-start">
+                    <FeaturedProductCard
+                      product={product}
+                      index={index}
+                      onClick={() => setSelectedProduct(product)}
+                    />
+                  </div>
                 ))}
               </div>
             </section>
@@ -112,13 +113,13 @@ function DeliveryApp() {
               )
               if (categoryProducts.length === 0) return null
               
-              // Insere o CategoryShowcase entre Cervejas (index 0) e Destilados (index 1)
-              const showCategoryShowcase = catIndex === 1
+              // Insere os produtos destaque entre Cervejas (index 0) e Destilados (index 1)
+              const showHighlightProducts = catIndex === 1
               
               return (
                 <div key={category.id}>
-                  {showCategoryShowcase && (
-                    <CategoryShowcase onCategorySelect={handleCategoryChange} />
+                  {showHighlightProducts && (
+                    <HighlightProducts onProductSelect={(p) => setSelectedProduct(p)} />
                   )}
                   <section className="mb-8">
                     <h2 className="text-lg font-bold text-foreground mb-4">

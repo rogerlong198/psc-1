@@ -1,7 +1,71 @@
 import type { Product, Additional, Review } from "./types"
 
 export const products: Product[] = [
-  // OFERTAS DO DIA - 5 produtos selecionados
+  // OFERTAS DO DIA
+  {
+    id: "400",
+    name: "Corona 330ml - Pack 6 garrafas",
+    description: "Pack com 6 garrafas da classica cerveja mexicana",
+    price: 19.19,
+    originalPrice: 24.14,
+    image: "https://cdn.shopify.com/s/files/1/0800/7050/8802/files/cerveja_corona_2_1.jpg?v=1769486848",
+    category: "ofertas",
+    badge: "PROMO",
+    stock: 50,
+    includes: ["6 garrafas de 330ml"],
+    accompaniments: ["Limao"]
+  },
+  {
+    id: "401",
+    name: "Skol Beats Senses 6un 313ml",
+    description: "Bebida mista com base de cerveja, sabor citrico e refrescante. Otima para festas",
+    price: 27.90,
+    image: "https://cdn.shopify.com/s/files/1/0800/7050/8802/files/a4f48483bbab465a4304ef1886d372ef.jpg?v=1769488484",
+    category: "ofertas",
+    badge: "PACK 6UN",
+    stock: 50,
+    includes: ["6 garrafas de 313ml"],
+    accompaniments: []
+  },
+  {
+    id: "402",
+    name: "Jack Daniels Apple 1000ml",
+    description: "Whiskey americano com sabor de maca verde, combinando o classico Tennessee Whiskey com frescor frutado. Perfeito puro, com gelo ou em drinks.",
+    price: 97.90,
+    originalPrice: 129.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/jack-daniels-apple-1000-ml_1_650.webp?v=1771911129",
+    category: "ofertas",
+    badge: "PROMO",
+    stock: 50,
+    includes: ["1 garrafa de 1L"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "403",
+    name: "Vodka Ciroc 750ml",
+    description: "Feita de uva na Franca, pais-icone do luxo. Presenca constante nos ambientes mais badalados do mundo. Garrafa elegante que lembra frascos de perfumistas.",
+    price: 158.90,
+    originalPrice: 234.52,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/vodka-ciroc_1_650.webp?v=1771912716",
+    category: "ofertas",
+    badge: "PROMO",
+    stock: 50,
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "404",
+    name: "Red Bull Energy Drink 250ml - 4 unidades",
+    description: "Red Bull te da asas! Energetico com cafeina, taurina e vitaminas do grupo B",
+    price: 11.90,
+    originalPrice: 33.96,
+    image: "https://cdn.shopify.com/s/files/1/0800/7050/8802/files/352bc8bb94367ea49ebf312bf24bf842.jpg?v=1769488562",
+    category: "ofertas",
+    badge: "PACK 4UN",
+    stock: 50,
+    includes: ["4 latas de 250ml"],
+    accompaniments: []
+  },
   {
     id: "5",
     name: "Heineken 330ml",
@@ -337,7 +401,7 @@ export const products: Product[] = [
   },
   {
     id: "67",
-    name: "Cerveja Amstel 269ml",
+    name: "Cerveja Amstel 269ml 12 Un",
     description: "Cerveja puro malte em lata compacta",
     price: 3.09,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/921937-400-auto.avif?v=1769743299",
@@ -681,6 +745,149 @@ export const products: Product[] = [
     includes: ["1 garrafa de 1L", "Blend escocês"],
     accompaniments: ["Gelo"]
   },
+  {
+    id: "303",
+    name: "Whisky Macallan 12 anos Double Cask 700ml",
+    description: "O Macallan Double Cask 12 Anos e uma expressao sofisticada do single malt escoces, envelhecida exclusivamente em barris de carvalho temperados com vinho Jerez. Produzido na celebre regiao de Speyside, Escocia.",
+    price: 229.90,
+    originalPrice: 429.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/macallan-12-anos-double-cask-700-ml-1074_1_650.webp?v=1771911194",
+    category: "queridinhos",
+    includes: ["1 garrafa de 700ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "304",
+    name: "Whisky Chivas Royal Salute 21 anos Azul 700ml",
+    description: "O Whisky Chivas Royal Salute 21 Anos Azul e uma verdadeira joia do mundo dos destilados. Criado para celebrar a coroacao da Rainha Elizabeth II, em 1953, este rotulo e sinonimo de elegancia e tradicao.",
+    price: 279.98,
+    originalPrice: 565.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/whisky-chivas-royal-salute-21-anos_1_650.webp?v=1771911204",
+    category: "queridinhos",
+    includes: ["1 garrafa de 700ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "305",
+    name: "Whisky Johnnie Walker Blue Label 750ml",
+    description: "Cada garrafa do Blue Label e uma verdadeira obra-prima, assinada por mestres blendadores. Elegante, poderoso e envolvente, e uma experiencia de luxo para quem valoriza historia e tradicao.",
+    price: 1299.00,
+    originalPrice: 2113.84,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/whisky-johnnie-walker-blue-label_1_650.webp?v=1771911213",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "306",
+    name: "Whisky Buffalo Trace Bourbon 750ml",
+    description: "Perfil marcante, encorpado e levemente adocicado, com notas irresistiveis de baunilha, caramelo e especiarias. Bourbon premiado, perfeito puro, com gelo ou em coqueteis classicos.",
+    price: 84.90,
+    originalPrice: 145.40,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/buffalo-trace-bourbon-750-ml_1_650.webp?v=1771911224",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "307",
+    name: "Whisky Woodford Reserve Bourbon 750ml",
+    description: "Um dos bourbons mais premiados dos EUA, produzido na historica Woodford Reserve Distillery, Kentucky. Reconhecido pelo processo artesanal e producao em pequenos lotes (small batch).",
+    price: 129.98,
+    originalPrice: 219.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/whisky-woodford-reserve-bourbon_1_650.webp?v=1771911230",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "308",
+    name: "Whisky Macallan Sherry Oak 12 anos 700ml",
+    description: "Envelhecido exclusivamente em barris de carvalho europeu que antes contiveram vinho Jerez Oloroso. Single malt que expressa profundidade, estrutura e estilo intensamente frutado e especiado.",
+    price: 269.90,
+    originalPrice: 388.77,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/macallan-sherry-oak-12-anos-700-ml_1_650.webp?v=1771911237",
+    category: "queridinhos",
+    includes: ["1 garrafa de 700ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "309",
+    name: "Whisky Old Parr 12 anos 1L",
+    description: "A historia do Old Parr remonta ao inicio do seculo XX, inspirada em Thomas Parr que viveu mais de 150 anos. Design marcante com vidro texturizado e formato robusto.",
+    price: 98.90,
+    originalPrice: 235.16,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/whisky-old-parr-12-anos_1_650.webp?v=1771911243",
+    category: "queridinhos",
+    includes: ["1 garrafa de 1L"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "310",
+    name: "Whisky Buchanan's 12 anos 1L",
+    description: "Envelhecido por pelo menos 12 anos, entrega notas suaves de frutas citricas, mel e madeira. Ideal para consumo puro, com gelo ou em coqueteis premium.",
+    price: 129.90,
+    originalPrice: 249.30,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/whisky-buchanans-12-anos_1_650.webp?v=1771911146",
+    category: "queridinhos",
+    includes: ["1 garrafa de 1L"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "311",
+    name: "Jack Daniels Apple 1000ml",
+    description: "Whiskey americano com sabor de maca verde, combinando o classico Tennessee Whiskey com frescor frutado. Perfeito puro, com gelo ou em drinks.",
+    price: 97.90,
+    originalPrice: 129.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/jack-daniels-apple-1000-ml_1_650.webp?v=1771911129",
+    category: "queridinhos",
+    includes: ["1 garrafa de 1L"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "312",
+    name: "Licor 43 (Cuarenta y Tres) 700ml",
+    description: "Licor espanhol produzido desde o inicio do seculo XX em Cartagena, Espanha. Sabor unico com conexao a cultura mediterranea, sinonimo de qualidade e tradicao.",
+    price: 159.90,
+    originalPrice: 224.68,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/licor-43-cuarenta-y-tres_1_650.webp?v=1771912721",
+    category: "queridinhos",
+    includes: ["1 garrafa de 700ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "313",
+    name: "Vodka Ciroc 750ml",
+    description: "Feita de uva na Franca, pais-icone do luxo. Presenca constante nos ambientes mais badalados do mundo. Garrafa elegante que lembra frascos de perfumistas.",
+    price: 158.90,
+    originalPrice: 234.52,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/vodka-ciroc_1_650.webp?v=1771912716",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "314",
+    name: "Vodka Grey Goose 750ml",
+    description: "Producao com trigo 100% puro da regiao francesa de La Beauce. Processo de destilacao de cinco etapas garante uma vodka suave, aveludada e refinada.",
+    price: 139.90,
+    originalPrice: 227.06,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/vodka-grey-goose_1_650.webp?v=1771912711",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
+  {
+    id: "315",
+    name: "Vodka Pravda 750ml",
+    description: "Vodka ultra premium produzida desde 1743 no coracao da mundialmente conhecida regiao produtora de vodka no sul da Polonia: Bielsko-Biala.",
+    price: 124.90,
+    originalPrice: 167.92,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/vodka-pravda_1_650.webp?v=1771912702",
+    category: "queridinhos",
+    includes: ["1 garrafa de 750ml"],
+    accompaniments: ["Gelo"]
+  },
 
   // ENERGETICOS (combinados)
   {
@@ -897,7 +1104,7 @@ export const products: Product[] = [
     description: "O mesmo sabor original do Brasil, agora sem açúcar",
     price: 5.99,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-sem-acucar-garrafa-15l-1.jpg?v=1769124335",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 1,5L", "Zero açúcar"],
     accompaniments: []
   },
@@ -907,7 +1114,7 @@ export const products: Product[] = [
     description: "Guaraná feito com fruto da Amazônia, sem açúcar",
     price: 3.09,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-sem-acucar-lata-350ml-1.jpg?v=1769124330",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 350ml", "Zero açúcar"],
     accompaniments: []
   },
@@ -917,7 +1124,7 @@ export const products: Product[] = [
     description: "O clássico guaraná brasileiro com sabor único",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0709/6211/8725/files/refrigerante-guarana-antarctica-350ml-1.jpg?v=1769124326",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 350ml"],
     accompaniments: []
   },
@@ -927,7 +1134,7 @@ export const products: Product[] = [
     description: "Pepsi zero acucar em garrafa grande",
     price: 5.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008891_27e5d388-357e-48c9-b50d-f953a63cf087.webp?v=1769744344",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 2L", "Zero acucar"],
     accompaniments: []
@@ -938,7 +1145,7 @@ export const products: Product[] = [
     description: "O sabor classico da Pepsi em garrafa grande",
     price: 5.50,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008885_5a9e7c2a-4d9b-4419-befd-e19dd7564758.webp?v=1769744386",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 2L"],
     accompaniments: []
   },
@@ -948,7 +1155,7 @@ export const products: Product[] = [
     description: "O classico guarana brasileiro em garrafa grande",
     price: 5.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008884_91a99c52-6aad-4f1e-a91f-f8b943bbbd46.webp?v=1769744532",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 garrafa de 2L"],
     accompaniments: []
   },
@@ -958,7 +1165,7 @@ export const products: Product[] = [
     description: "Pepsi zero acucar em lata",
     price: 2.80,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008867_6a15d204-0229-4912-b00e-7e0c0dd4a62f.webp?v=1769744608",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -969,7 +1176,7 @@ export const products: Product[] = [
     description: "Guarana Antarctica sem acucar em lata",
     price: 2.97,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/00008865_0da83f51-0f96-4247-9cac-1963bc60dd1c.webp?v=1769744652",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -980,7 +1187,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em garrafa compacta",
     price: 1.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/924191-400-auto.avif?v=1769750734",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 200ml", "Zero acucar"],
     accompaniments: []
@@ -991,7 +1198,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em garrafa grande",
     price: 11.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/911856-400-auto.avif?v=1769750763",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 garrafa de 2L", "Zero acucar"],
     accompaniments: []
@@ -1002,7 +1209,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata",
     price: 3.99,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/911854-400-auto.avif?v=1769750792",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 350ml", "Zero acucar"],
     accompaniments: []
@@ -1013,7 +1220,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata compacta",
     price: 2.79,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/927046-400-auto.avif?v=1769750823",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 220ml", "Zero acucar"],
     accompaniments: []
@@ -1024,7 +1231,7 @@ export const products: Product[] = [
     description: "Coca-Cola zero acucar em lata sleek",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/923034-400-auto.avif?v=1769750859",
-    category: "temaki",
+    category: "combinados",
     badge: "ZERO ACUCAR",
     includes: ["1 lata de 310ml", "Zero acucar"],
     accompaniments: []
@@ -1035,7 +1242,7 @@ export const products: Product[] = [
     description: "Coca-Cola original em lata sleek",
     price: 3.59,
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/983001-400-auto.avif?v=1769750883",
-    category: "temaki",
+    category: "combinados",
     includes: ["1 lata de 310ml"],
     accompaniments: []
   },
@@ -1179,6 +1386,36 @@ export const products: Product[] = [
     image: "https://cdn.shopify.com/s/files/1/0794/8750/0511/files/coco.webp?v=1769741610",
     category: "poke",
     includes: ["1 unidade"],
+    accompaniments: []
+  },
+  {
+    id: "300",
+    name: "Agua Mineral Sem Gas Crystal 500ml Kit com 12 Un",
+    description: "Agua cuidadosamente purificada e de alta qualidade. Pratica garrafa de 500ml, ideal para acompanhar refeicoes, treinos ou momentos de lazer. Kit com 12 unidades.",
+    price: 42.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/81NZnsXVlIL._AC_SL1500.jpg?v=1771912994",
+    category: "poke",
+    includes: ["12 unidades"],
+    accompaniments: []
+  },
+  {
+    id: "301",
+    name: "Agua com Gas 500ml Kit com 12 Un",
+    description: "Agua Crystal com Gas, leve e natural para quem busca hidratacao de qualidade. Bolhas leves que trazem sensacao de frescor imediato. Kit com 12 unidades.",
+    price: 42.90,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/71Z-VlKmPZL._AC_SL1500.jpg?v=1771912998",
+    category: "poke",
+    includes: ["12 unidades"],
+    accompaniments: []
+  },
+  {
+    id: "302",
+    name: "Agua Mineral Sem Gas 1,5L Pack com 6 Un Crystal",
+    description: "Agua mineral sem gas Crystal em embalagem de 1,5L. Pack com 6 unidades, perfeita para o dia a dia e para toda a familia.",
+    price: 24.00,
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/996948d.jpg?v=1771913051",
+    category: "poke",
+    includes: ["6 unidades"],
     accompaniments: []
   },
 
@@ -1384,11 +1621,10 @@ export const reviews: Review[] = [
 ]
 
 export const categories = [
-  { id: "ofertas", name: "Ofertas do Dia" },
-  { id: "cervejas", name: "Cervejas" },
-  { id: "comida", name: "Comida" },
-  { id: "queridinhos", name: "Destilados e Drinks Fortes" },
-  { id: "combinados", name: "Energeticos" },
-  { id: "temaki", name: "Refrigerantes" },
-  { id: "poke", name: "Gelinhos" },
-]
+  { id: "ofertas", name: "Ofertas", icon: "/categories/ofertas.png" },
+  { id: "cervejas", name: "Cervejas", icon: "/categories/cervejas.png" },
+  { id: "comida", name: "Comida", icon: "/categories/comida.png" },
+  { id: "queridinhos", name: "Destilados", icon: "/categories/destilados.png" },
+  { id: "combinados", name: "Refri e Energeticos", icon: "/categories/refrigerantes.png" },
+  { id: "poke", name: "Gelinhos", icon: "/categories/aguas-gelo.png" },
+  ]
