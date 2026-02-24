@@ -1628,4 +1628,5 @@ export const categories = [
   { id: "combinados", name: "Refri e Energeticos", icon: "/categories/refrigerantes.png" },
   { id: "poke", name: "Gelinhos", icon: "/categories/aguas-gelo.png" },
   { id: "churrasco", name: "Churrasco", icon: "/categories/churrasco.webp" },
+  { id: "salgadinho", name: "Salgadinho", icon: "/categories/salgadinho.webp" },
   ]
