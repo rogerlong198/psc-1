@@ -94,14 +94,15 @@ function DeliveryApp() {
               <h2 className="text-lg font-bold text-foreground mb-4">
                 Ofertas do Dia
               </h2>
-              <div className="space-y-3">
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory">
                 {featuredProducts.map((product, index) => (
-                  <CompactProductCard
-                    key={product.id}
-                    product={product}
-                    index={index}
-                    onClick={() => setSelectedProduct(product)}
-                  />
+                  <div key={product.id} className="flex-shrink-0 w-[160px] snap-start">
+                    <FeaturedProductCard
+                      product={product}
+                      index={index}
+                      onClick={() => setSelectedProduct(product)}
+                    />
+                  </div>
                 ))}
               </div>
             </section>
