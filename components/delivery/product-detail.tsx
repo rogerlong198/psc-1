@@ -6,6 +6,7 @@ import { ArrowLeft, Minus, Plus, UtensilsCrossed, Package } from "lucide-react"
 import type { Product, Additional } from "@/lib/types"
 import { additionals, products } from "@/lib/data"
 import { useCart } from "@/lib/cart-context"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -41,6 +42,10 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
     }
   }, [])
   const [observation, setObservation] = useState("")
+
+  const discountPercent = product.originalPrice
+    ? Math.ceil(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : null
 
   const suggestedProducts = useMemo(() => {
     const others = products.filter((p) => p.id !== product.id)
@@ -126,9 +131,16 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
               </span>
             )}
           </div>
-          <p className="text-2xl font-bold text-primary mt-1">
-            R$ {product.price.toFixed(2).replace(".", ",")}
-          </p>
+          <div className="flex items-center gap-2 mt-1">
+            <p className="text-2xl font-bold text-primary">
+              R$ {product.price.toFixed(2).replace(".", ",")}
+            </p>
+            {discountPercent && (
+              <Badge className="bg-primary text-primary-foreground font-bold text-sm px-2.5 py-1">
+                -{discountPercent}%
+              </Badge>
+            )}
+          </div>
           
           {product.stock && (
             <p className="text-sm text-accent font-medium mt-2">
