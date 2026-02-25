@@ -122,14 +122,7 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
         </div>
 
         <div className="p-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200 fill-mode-both">
-          <div className="flex items-start justify-between gap-2">
-            <h1 className="text-2xl font-bold text-foreground">{product.name}</h1>
-            {discountPercent && (
-              <Badge className="bg-primary text-primary-foreground font-bold text-sm px-2.5 py-1 shrink-0">
-                -{discountPercent}%
-              </Badge>
-            )}
-          </div>
+          <h1 className="text-2xl font-bold text-foreground">{product.name}</h1>
           
           <div className="flex items-baseline gap-2 mt-2">
             {product.originalPrice && (
@@ -138,9 +131,16 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
               </span>
             )}
           </div>
-          <p className="text-2xl font-bold text-primary mt-1">
-            R$ {product.price.toFixed(2).replace(".", ",")}
-          </p>
+          <div className="flex items-center gap-2 mt-1">
+            <p className="text-2xl font-bold text-primary">
+              R$ {product.price.toFixed(2).replace(".", ",")}
+            </p>
+            {discountPercent && (
+              <Badge className="bg-primary text-primary-foreground font-bold text-sm px-2.5 py-1">
+                -{discountPercent}%
+              </Badge>
+            )}
+          </div>
           
           {product.stock && (
             <p className="text-sm text-accent font-medium mt-2">
