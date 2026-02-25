@@ -234,7 +234,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "5",
+    id: "oferta-doritos-120",
     name: "Doritos Queijo Nacho 120g",
     description: "Salgadinho Doritos sabor Queijo Nacho 120g.",
     price: 11.89,
@@ -247,7 +247,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "6",
+    id: "oferta-torcida-60",
     name: "Torcida Churrasco 60g",
     description: "Salgadinho Torcida sabor Churrasco 60g.",
     price: 2.49,
@@ -259,7 +259,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "7",
+    id: "oferta-lays-70",
     name: "Lays Classica 70g",
     description: "Batata Lays sabor Classico 70g.",
     price: 10.29,
@@ -271,7 +271,7 @@ export const products: Product[] = [
     accompaniments: []
   },
   {
-    id: "8",
+    id: "oferta-carvao-2",
     name: "Carvao 2kg",
     description: "Carvao para churrasco 2kg.",
     price: 18.32,
