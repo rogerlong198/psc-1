@@ -6,6 +6,7 @@ import { ArrowLeft, Minus, Plus, UtensilsCrossed, Package } from "lucide-react"
 import type { Product, Additional } from "@/lib/types"
 import { additionals, products } from "@/lib/data"
 import { useCart } from "@/lib/cart-context"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -41,6 +42,10 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
     }
   }, [])
   const [observation, setObservation] = useState("")
+
+  const discountPercent = product.originalPrice
+    ? Math.ceil(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : null
 
   const suggestedProducts = useMemo(() => {
     const others = products.filter((p) => p.id !== product.id)
@@ -117,7 +122,14 @@ export function ProductDetail({ product, onClose, onSelectProduct }: ProductDeta
         </div>
 
         <div className="p-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200 fill-mode-both">
-          <h1 className="text-2xl font-bold text-foreground">{product.name}</h1>
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-2xl font-bold text-foreground">{product.name}</h1>
+            {discountPercent && (
+              <Badge className="bg-primary text-primary-foreground font-bold text-sm px-2.5 py-1 shrink-0">
+                -{discountPercent}%
+              </Badge>
+            )}
+          </div>
           
           <div className="flex items-baseline gap-2 mt-2">
             {product.originalPrice && (

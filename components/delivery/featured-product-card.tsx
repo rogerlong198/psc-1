@@ -17,6 +17,10 @@ interface FeaturedProductCardProps {
 export function FeaturedProductCard({ product, onClick, index = 0 }: FeaturedProductCardProps) {
   const { addItem } = useCart()
 
+  const discountPercent = product.originalPrice
+    ? Math.ceil(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : null
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation()
     addItem(product, 1, [], "")
@@ -39,7 +43,11 @@ export function FeaturedProductCard({ product, onClick, index = 0 }: FeaturedPro
           fill
           className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-110"
         />
-        {product.badge && (
+        {discountPercent ? (
+          <Badge className="absolute top-2 left-2 bg-primary text-primary-foreground font-bold text-xs animate-in zoom-in-50 duration-300 shadow-lg">
+            -{discountPercent}%
+          </Badge>
+        ) : product.badge && (
           <Badge className="absolute top-2 left-2 bg-primary text-primary-foreground font-bold text-xs animate-in zoom-in-50 duration-300 shadow-lg">
             {product.badge}
           </Badge>

@@ -4,6 +4,7 @@ import React from "react"
 
 import Image from "next/image"
 import type { Product } from "@/lib/types"
+import { Badge } from "@/components/ui/badge"
 import { ShoppingBag } from "lucide-react"
 import { useCart } from "@/lib/cart-context"
 
@@ -15,6 +16,10 @@ interface CompactProductCardProps {
 
 export function CompactProductCard({ product, onClick, index = 0 }: CompactProductCardProps) {
   const { addItem } = useCart()
+
+  const discountPercent = product.originalPrice
+    ? Math.ceil(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : null
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -52,7 +57,11 @@ export function CompactProductCard({ product, onClick, index = 0 }: CompactProdu
           fill
           className="object-contain p-1 transition-transform duration-300 group-hover:scale-110"
         />
-        {/* Botao adicionar ao carrinho */}
+        {discountPercent && (
+          <Badge className="absolute top-1 left-1 bg-primary text-primary-foreground font-bold text-[10px] px-1.5 py-0.5 shadow-md">
+            -{discountPercent}%
+          </Badge>
+        )}
         <button
           onClick={handleAddToCart}
           className="absolute bottom-1 right-1 w-8 h-8 bg-accent rounded-full flex items-center justify-center shadow-lg
