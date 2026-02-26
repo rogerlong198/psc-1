@@ -2221,7 +2221,7 @@ export const products: Product[] = [
     description: "Combo premium com 1 Whisky Buchanan's 1L, 6 latas de Red Bull e gelo. Para quem aprecia um whisky de qualidade.",
     price: 113.99,
     originalPrice: 162.84,
-    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/download-1c.png?v=1772070762",
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/image_3.jpg?v=1772087527",
     category: "combos-destaques",
     includes: ["1 Whisky Buchanan's 1L", "6 Red Bull", "Gelo"],
     accompaniments: []
