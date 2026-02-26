@@ -2196,12 +2196,12 @@ export const products: Product[] = [
   {
     id: "cd-05",
     name: "Combo Aperol Spritz",
-    description: "Combo completo para preparar o classico Aperol Spritz em casa. Inclui Aperol, espumante e gelo.",
+    description: "Combo completo para preparar o classico Aperol Spritz em casa. Inclui 1 Aperol, 2 Espumantes, 2 Aguas e 1 Gelo.",
     price: 149.39,
     originalPrice: 195.75,
     image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/download-2026-02-17-T230130-693_31e9d8c4-04ba-42aa-bfc3-9427d377c699c.png?v=1772070777",
     category: "combos-destaques",
-    includes: ["Aperol", "Espumante", "Gelo"],
+    includes: ["1 Aperol", "2 Espumantes", "2 Aguas", "1 Gelo"],
     accompaniments: []
   },
   {
