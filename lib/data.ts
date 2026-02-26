@@ -2254,7 +2254,7 @@ export const products: Product[] = [
     description: "Combo para esquentar a noite com 1 Vodka Smirnoff, 6 latas de Red Bull e gelo. Energia e sabor garantidos.",
     price: 48.54,
     originalPrice: 69.34,
-    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/download-2026-02-17-T225659-238_5a6d2b10-daef-411e-9799-dd76930a5a46.png?v=1772070726",
+    image: "https://cdn.shopify.com/s/files/1/0807/3173/4230/files/download-4_processed.png?v=1772086445",
     category: "combos-destaques",
     includes: ["1 Vodka Smirnoff", "6 Red Bull", "Gelo"],
     accompaniments: []
