@@ -23,7 +23,9 @@ import { PendingOrdersButton, PendingOrdersModal } from "@/components/delivery/p
 import { UpsellCombo } from "@/components/delivery/upsell-combo"
 import { PriceFilter, sortProducts, type SortOrder } from "@/components/delivery/price-filter"
 import { useCart } from "@/lib/cart-context"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+
+const HOME_PRODUCTS_LIMIT = 6
 
 function DeliveryApp() {
   const { addCombo } = useCart()
@@ -198,6 +200,8 @@ function DeliveryApp() {
               const isHorizontal = category.id === "salgadinho"
               const currentFilter = categoryFilters[category.id] || "default"
               const sortedProducts = sortProducts(categoryProducts, currentFilter) as Product[]
+              const limitedProducts = sortedProducts.slice(0, HOME_PRODUCTS_LIMIT)
+              const hasMore = sortedProducts.length > HOME_PRODUCTS_LIMIT
 
               return (
                 <div key={category.id}>
@@ -213,7 +217,7 @@ function DeliveryApp() {
                     </div>
                     {isHorizontal ? (
                       <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory">
-                        {sortedProducts.map((product, index) => (
+                        {limitedProducts.map((product, index) => (
                           <div key={product.id} className="flex-shrink-0 w-[42vw] max-w-[180px] snap-start">
                             <FeaturedProductCard
                               product={product}
@@ -225,7 +229,7 @@ function DeliveryApp() {
                       </div>
                     ) : (
                       <div className="space-y-3">
-                        {sortedProducts.map((product, index) => (
+                        {limitedProducts.map((product, index) => (
                           <CompactProductCard
                             key={product.id}
                             product={product}
@@ -234,6 +238,18 @@ function DeliveryApp() {
                           />
                         ))}
                       </div>
+                    )}
+                    {hasMore && (
+                      <button
+                        type="button"
+                        onClick={() => handleCategoryChange(category.id)}
+                        className="mt-4 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl
+                          bg-secondary/60 hover:bg-secondary text-foreground font-medium text-sm
+                          transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+                      >
+                        Ver todos ({sortedProducts.length} produtos)
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
                     )}
                   </section>
                 </div>

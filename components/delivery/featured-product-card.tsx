@@ -41,6 +41,8 @@ export function FeaturedProductCard({ product, onClick, index = 0 }: FeaturedPro
           src={product.image || "/placeholder.svg"}
           alt={product.name}
           fill
+          loading="lazy"
+          sizes="(max-width: 768px) 42vw, 180px"
           className="object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-110"
         />
         {discountPercent ? (
