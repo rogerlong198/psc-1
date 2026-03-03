@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { categories } from "@/lib/data"
@@ -14,6 +14,17 @@ const SCROLL_AMOUNT = 120
 
 export function CategoryNav({ activeCategory, onCategoryChange }: CategoryNavProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll para o botao da categoria ativa
+  useEffect(() => {
+    if (!scrollRef.current) return
+    const activeBtn = scrollRef.current.querySelector<HTMLElement>(`[data-category-id="${activeCategory}"]`)
+    if (activeBtn) {
+      const container = scrollRef.current
+      const scrollLeft = activeBtn.offsetLeft - container.offsetWidth / 2 + activeBtn.offsetWidth / 2
+      container.scrollTo({ left: scrollLeft, behavior: "smooth" })
+    }
+  }, [activeCategory])
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return
@@ -40,6 +51,7 @@ export function CategoryNav({ activeCategory, onCategoryChange }: CategoryNavPro
             {categories.map((category) => (
               <button
                 key={category.id}
+                data-category-id={category.id}
                 onClick={() => onCategoryChange(category.id)}
                 className={cn(
                   "flex-shrink-0 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200",
