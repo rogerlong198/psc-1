@@ -55,6 +55,8 @@ export function CompactProductCard({ product, onClick, index = 0 }: CompactProdu
           src={product.image || "/placeholder.svg"}
           alt={product.name}
           fill
+          loading="lazy"
+          sizes="96px"
           className="object-contain p-1 transition-transform duration-300 group-hover:scale-110"
         />
         {discountPercent && (

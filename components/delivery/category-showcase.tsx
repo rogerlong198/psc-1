@@ -6,7 +6,7 @@ import { products } from "@/lib/data"
 import { useCart } from "@/lib/cart-context"
 import { ShoppingBag } from "lucide-react"
 
-const MAX_MAIORES_DESCONTOS = 8
+const MAX_MAIORES_DESCONTOS = 6
 
 interface HighlightProductsProps {
   onProductSelect: (product: (typeof products)[0]) => void
@@ -80,6 +80,8 @@ export function HighlightProducts({ onProductSelect, onComboClick }: HighlightPr
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
                   fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 42vw, 180px"
                   className="object-contain p-2"
                 />
                 {discount > 0 && (
