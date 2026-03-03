@@ -154,40 +154,22 @@ function DeliveryApp() {
                 </h2>
                 <PromoTimer />
               </div>
-              <div className="flex items-center gap-1 -mx-2">
-                <button
-                  type="button"
-                  onClick={() => scrollOfertas("left")}
-                  aria-label="Ofertas anteriores"
-                  className="flex-shrink-0 w-9 h-9 rounded-full bg-secondary/90 hover:bg-secondary shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <div
-                  ref={ofertasScrollRef}
-                  className="flex-1 min-w-0 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2 scroll-smooth snap-x snap-mandatory"
-                  style={{ WebkitOverflowScrolling: "touch" } as React.CSSProperties}
-                >
-                  <div className="flex gap-3 w-max px-2">
-                    {[...featuredProducts, ...featuredProducts].map((product, index) => (
-                      <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[42vw] max-w-[180px] snap-start">
-                        <FeaturedProductCard
-                          product={product}
-                          index={index % featuredProducts.length}
-                          onClick={() => setSelectedProduct(product)}
-                        />
-                      </div>
-                    ))}
-                  </div>
+              <div
+                ref={ofertasScrollRef}
+                className="overflow-x-auto overflow-y-hidden scrollbar-hide pb-2 scroll-smooth snap-x snap-mandatory -mx-4 px-4"
+                style={{ WebkitOverflowScrolling: "touch" } as React.CSSProperties}
+              >
+                <div className="flex gap-3 w-max">
+                  {[...featuredProducts, ...featuredProducts].map((product, index) => (
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[44vw] max-w-[200px] snap-start">
+                      <FeaturedProductCard
+                        product={product}
+                        index={index % featuredProducts.length}
+                        onClick={() => setSelectedProduct(product)}
+                      />
+                    </div>
+                  ))}
                 </div>
-                <button
-                  type="button"
-                  onClick={() => scrollOfertas("right")}
-                  aria-label="Proximas ofertas"
-                  className="flex-shrink-0 w-9 h-9 rounded-full bg-secondary/90 hover:bg-secondary shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
               </div>
             </section>
 
