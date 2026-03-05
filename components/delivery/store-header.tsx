@@ -111,7 +111,7 @@ export function StoreHeader({ userAddress, onChangeAddress }: StoreHeaderProps) 
           <button
             type="button"
             onClick={onChangeAddress}
-            className="w-full mt-4 mx-4 bg-white border-2 border-[#1a0d00] rounded-3xl py-4 px-4
+            className="w-full mt-4 bg-white border-2 border-[#1a0d00] rounded-3xl py-4 px-4
               hover:bg-amber-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer
               shadow-lg shadow-[#532702]/20 hover:shadow-xl hover:shadow-[#532702]/30"
           >
