@@ -254,14 +254,14 @@ function DeliveryApp() {
                 {categories.find((c) => c.id === activeCategory)?.name}
               </h2>
               <PriceFilter
-                value={categoryFilters[activeCategory] ?? "discount"}
+                value={categoryFilters[activeCategory] ?? "default"}
                 onChange={(val) => setCategoryFilters(prev => ({ ...prev, [activeCategory]: val }))}
               />
             </div>
             <div className="space-y-3">
               {(sortProducts(
                 getCategoryProducts(activeCategory),
-                categoryFilters[activeCategory] ?? "discount"
+                categoryFilters[activeCategory] ?? "default"
               ) as Product[]).map((product, index) => (
                 <CompactProductCard
                   key={product.id}
