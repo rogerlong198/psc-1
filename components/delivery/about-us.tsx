@@ -23,7 +23,7 @@ export function AboutUs() {
           
           <p className="text-sm text-muted-foreground leading-relaxed">
             A Doce Sabor é revendedora autorizada das melhores marcas de chocolates e ovos de Páscoa. 
-            Trabalhamos com Lacta, Nestlé, Hershey's, Ferrero e outras marcas premium. 
+            Trabalhamos com marcas premium. 
             Preços competitivos, entrega rápida e a garantia de produtos originais em cada pedido.
           </p>
           
