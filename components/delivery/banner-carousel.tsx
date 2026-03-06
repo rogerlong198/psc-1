@@ -47,7 +47,7 @@ export function BannerCarousel({ onBannerClick, onComboClick }: BannerCarouselPr
           {banners.map((banner) => (
             <div
               key={banner.id}
-              className="relative aspect-[1024/448] w-full flex-shrink-0 cursor-pointer"
+              className="relative aspect-[16/9] w-full flex-shrink-0 cursor-pointer"
               onClick={() => {
                 if (banner.action === "combo" && onComboClick) {
                   onComboClick()
@@ -60,7 +60,7 @@ export function BannerCarousel({ onBannerClick, onComboClick }: BannerCarouselPr
                 src={banner.src}
                 alt={banner.alt}
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
                 sizes="(max-width: 512px) 100vw, 512px"
                 priority={banner.id === 1}
               />
