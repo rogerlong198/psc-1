@@ -60,7 +60,7 @@ export function BannerCarousel({ onBannerClick, onComboClick }: BannerCarouselPr
                 src={banner.src}
                 alt={banner.alt}
                 fill
-                className="object-contain rounded-xl"
+                className="object-contain rounded-xl scale-[1.02]"
                 sizes="(max-width: 512px) 100vw, 512px"
                 priority={banner.id === 1}
               />
