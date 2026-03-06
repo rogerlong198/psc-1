@@ -6,38 +6,17 @@ import { useState, useEffect, useCallback } from "react"
 const banners = [
   {
     id: 1,
-    src: "/banners/banner_pascoa_coelho_1024x448.png",
-    alt: "Páscoa - Coelho",
+    src: "/banners/banner-1.webp",
+    alt: "Páscoa Especial - Veja as Promoções",
     action: "category" as const,
-    categoryLink: "pascoa",
+    categoryLink: "promocao",
   },
   {
     id: 2,
-    src: "/banners/banner_powerpuff_1024x448.png",
-    alt: "Páscoa infantil - Poderosas",
-    action: "combo" as const,
-    categoryLink: "",
-  },
-  {
-    id: 3,
-    src: "/banners/banner_ursinhos_1024x448.png",
-    alt: "Páscoa infantil - Ursinhos",
-    action: "combo" as const,
-    categoryLink: "",
-  },
-  {
-    id: 4,
-    src: "/banners/banner_snoopy_1024x448.png",
-    alt: "Páscoa infantil - Snoopy",
-    action: "combo" as const,
-    categoryLink: "",
-  },
-  {
-    id: 5,
-    src: "/banners/banner_harry_potter_1024x448.png",
-    alt: "Páscoa infantil - Harry Potter",
-    action: "combo" as const,
-    categoryLink: "",
+    src: "/banners/banner-2.webp",
+    alt: "Páscoa Especial - Aproveite as Ofertas",
+    action: "category" as const,
+    categoryLink: "promocao",
   },
 ]
 
