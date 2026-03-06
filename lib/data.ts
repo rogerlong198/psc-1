@@ -1986,5 +1986,8 @@ export const categories = [
   { id: "promocao", name: "Promoção" },
   ...priorityBrands.filter((m) => brands.includes(m)).map((marca) => ({ id: `marca:${marca}`, name: marca })),
   { id: "chocolates", name: "Chocolates" },
+  { id: "ovos-de-pascoa", name: "Ovos de Páscoa" },
+  { id: "tabletes", name: "Tabletes" },
+  { id: "bombons", name: "Bombons" },
   ...otherBrands.map((marca) => ({ id: `marca:${marca}`, name: marca })),
 ]

@@ -125,10 +125,17 @@ function DeliveryApp() {
       const base = products.filter((p) => p.category === "chocolates" || p.category === "ofertas")
       return base.filter((p) => !isOvo(p.name))
     }
-    // Páscoa: todos os ovos (pascoa + ofertas)
-    if (categoryId === "pascoa") {
-      const base = products.filter((p) => p.category === "pascoa" || p.category === "ofertas")
-      return base.filter((p) => isOvo(p.name))
+    // Ovos de Páscoa: todos os ovos
+    if (categoryId === "ovos-de-pascoa") {
+      return products.filter((p) => isOvo(p.name) || p.category === "ovos-de-pascoa")
+    }
+    // Tabletes: produtos com "tablete" no nome
+    if (categoryId === "tabletes") {
+      return products.filter((p) => p.name.toLowerCase().includes("tablete"))
+    }
+    // Bombons: produtos com "bombom" no nome
+    if (categoryId === "bombons") {
+      return products.filter((p) => p.name.toLowerCase().includes("bombom") || p.name.toLowerCase().includes("trufa"))
     }
     const base = products.filter((p) => p.category === categoryId)
     return base
